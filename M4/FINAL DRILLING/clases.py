@@ -49,7 +49,7 @@ class Motocicleta (Bicicleta, Caracteristicas):
 class Particular (Automovil):
     def __init__(self, marca, modelo, n_ruedas, velocidad, cilindrada, n_puestos):
         super().__init__(marca, modelo, n_ruedas, velocidad, cilindrada)
-        self.n_puestos: n_puestos
+        self.n_puestos = n_puestos
 
     def __str__(self):
         return Automovil.__str__(self) + "Puestos: {}".format(self.n_puestos)

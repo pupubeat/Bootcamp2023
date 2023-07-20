@@ -7,9 +7,9 @@ bicicleta = Bicicleta("Shimano", "MT Ranger", 2, "Carrera")
 motocicleta = Motocicleta("BMW", "F800s",2,"Deportiva","2T","Doble Viga", 21)
 
 print(particular)
-#print(carga)
-#print(bicicleta)
-#print(motocicleta)
+print(carga)
+print(bicicleta)
+print(motocicleta)
 
 #print("")
 
