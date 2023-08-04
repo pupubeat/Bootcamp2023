@@ -1,3 +1,5 @@
+import csv
+
 #Definir clase Vehiculo.
 class Vehiculo():
     def __init__(self, marca, modelo, n_ruedas):
@@ -5,8 +7,41 @@ class Vehiculo():
         self.modelo = modelo
         self.n_ruedas = n_ruedas
 
+    def guardar_datos_csv(self):
+        try:
+            with open("vehiculos.csv","a", newline="") as archivo:
+                datos = [(self.__class__, self.__dict__)]
+                archivo_csv = csv.writer(archivo)
+                archivo_csv.writerows(datos)
+
+        except FileNotFoundError:
+            print("El archivo vehiculos.cvs no existe")
+        
+        except Exception as e:
+            print("ERROR: ", e)
+
+    def leer_datos_csv(self):
+        try:
+            with open("vehiculos.csv","r") as archivo:
+                vehiculos = csv.reader(archivo)
+                print(f"Lista de Vehículos {type(self).__name__}")
+                for item in vehiculos:
+                    vehiculo_tipo = str(self.__class__)
+                    if vehiculo_tipo in item[0]:
+                        print (item[1])
+                        print("")
+
+        except FileNotFoundError:
+            print("El archivo vehiculos.cvs no existe")
+
+        except Exception as e:
+            print("ERROR: ", e)
+
     def __str__(self):
         return "Marca: {}, Modelo: {}, {} ruedas".format(self.marca, self.modelo, self.n_ruedas)
+
+#{type(self).__name__} --> Solo para que se imprima el nombre de la clase
+#item[1] ---> diccionario
 
 #Definir clase hija de Vehiculo: Automóvil
 class Automovil(Vehiculo):
