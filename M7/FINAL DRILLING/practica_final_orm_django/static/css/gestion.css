@@ -1,0 +1,21 @@
+/* margen texto navbar */
+.navbar-brand {
+  margin-left: 2%;
+  /* Ajusta el valor según tus necesidades */
+}
+
+.navbar-container {
+  margin-left: 4%;
+}
+
+/* estilo de letras */
+body {
+  font-family: 'Akshar', sans-serif;
+}
+
+/* formato a las tablas */
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+}
