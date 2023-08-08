@@ -15,9 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from vehiculo.views import IndexView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('vehiculo/', include('vehiculo.urls')),
+    path('', include('vehiculo.urls')),
 ]

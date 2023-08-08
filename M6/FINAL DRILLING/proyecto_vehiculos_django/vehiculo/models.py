@@ -26,3 +26,4 @@ class VehiculoModel(models.Model):
     def __str__(self):
         return self.Marca
 
+
